@@ -47,13 +47,14 @@ def main(times_done):
         time.sleep(3) # load new webpage
 
 def wait_for_psw_input():
-    time.sleep(1)
-    time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(1);pyautogui.type('USERNAME GOES HERE');time.sleep(2);keyboard.press('tab');time.sleep(.5);keyboard.write("password goes here :)");keyboard.press_and_release('enter');time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001)
-    time.sleep(5)
+    time.sleep(1) #load webpage
+    pyautogui.typewrite("USERNAME GOES HERE");keyboard.press('tab');keyboard.write("password goes here :)");keyboard.press_and_release('enter')
+    time.sleep(5) #load wp
 
 if __name__ == '__main__':
     main(5) # how many iterations
 
+#append to a csv
 with open ('Assessments.json','w') as json_file:
     json.dump(txtsubject,json_file,indent=4)
 
