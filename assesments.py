@@ -1,21 +1,16 @@
-import selenium 
-from bs4 import BeautifulSoup
-import time
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
-import os
-import json
-import keyboard
-from selenium.webdriver.chrome.options import Options
-import pyautogui
+import selenium ;from bs4 import BeautifulSoup;import time;from selenium.webdriver.chrome.service import Service as ChromeService;from webdriver_manager.chrome import ChromeDriverManager;import os;import json;import keyboard;from selenium.webdriver.chrome.options import Options;import pyautogui
 driver = selenium.webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
 url = "url goes here :)))))) shhhhhhhhhhhh, confidential"
+
+#opens url with head
 driver.get(url)
 
 txtsubject = []
 one_time = True
 
 def main(times_done):
+    
     global one_time,txtsubject
     for k in range(times_done):
 
@@ -39,28 +34,25 @@ def main(times_done):
                         pass
 
                 if 'subject' in txtsubject_dic:  # Check if subject exists
-                    date1 = i.find('a', class_='fc-daygrid-day-number')
-                    date = date1['aria-label']
-                    txtsubject_dic['date'] = date
+                    
+                    txtsubject_dic['date'] = (i.find('a', class_='fc-daygrid-day-number')['aria-label'])
 
                     txtsubject.append(txtsubject_dic)
 
-            except:
-                print("Nuh uh")
+            except ValueError:
+                pass
 
 
-        pyautogui.click(737,618)
-        time.sleep(3)
+        pyautogui.click(737,618) #next
+        time.sleep(3) # load new webpage
 
 def wait_for_psw_input():
-    global one_time
     time.sleep(1)
-    time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(1);keyboard.press('l');time.sleep(.05);keyboard.press('w');time.sleep(.05);keyboard.press('a');time.sleep(.05);keyboard.press('l');time.sleep(.05);keyboard.press('0');keyboard.press('1');time.sleep(2);keyboard.press('tab');time.sleep(.5);keyboard.write("password goes here :)");keyboard.press_and_release('enter');time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001)
+    time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(1);pyautogui.type('USERNAME GOES HERE');time.sleep(2);keyboard.press('tab');time.sleep(.5);keyboard.write("password goes here :)");keyboard.press_and_release('enter');time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001);time.sleep(0.001)
     time.sleep(5)
 
 if __name__ == '__main__':
-    main(5)
-    print(txtsubject)
+    main(5) # how many iterations
 
 with open ('Assessments.json','w') as json_file:
     json.dump(txtsubject,json_file,indent=4)
@@ -70,7 +62,4 @@ with open ('Assessments.json','w') as json_file:
  class="fc-event-title">3:35pm</b> <!--v-if--> <span data-v-054bf15a="" class="fc-event-title">VCE Units 3 &amp; 4 Physics (PHY-12-E1,PHY-12-E2)<br>Summative AT 3.1: Problem solving in real world contexts (Motion in 2D)</span></div></span></div></a></div><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div>
 
 '''
-
-
-
 
